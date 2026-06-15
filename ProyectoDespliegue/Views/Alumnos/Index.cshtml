@@ -1,0 +1,278 @@
+<body class="Fondo_Alumno">
+
+    <!-- Toast informativo -->
+    <div class="toast align-items-center text-bg-dark border-0" id="myToastOutside" role="alert" aria-live="assertive"
+         aria-atomic="true" data-bs-delay="5000" style="position: fixed; top: 400px; right: 20px; z-index: 1050;">
+
+        <div class="d-flex">
+            <div class="toast-body">
+                <mark>Total de alumnos registrados:</mark> Cantidad total de alumnos cargados.
+                <mark>Alumnos que trabajan:</mark> Representa los alumnos con trabajo actualmente.
+            </div>
+
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+        </div>
+    </div>
+
+    <h6 class="Textobohemia text-center">
+        En esta sección usted podrá ingresar alumnos con sus datos personales y editarlos.
+    </h6>
+
+    <div class="fondo_Producto">
+        <div class="contenedor">
+
+            <input type="hidden" id="CargaAlumosId" value="0">
+
+            <!-- Primera fila -->
+            <div class="row mb-3">
+
+                <div class="col-md-4">
+                    <label for="Nombre" class="form-label Textobohemia">Nombre</label>
+                    <input type="text" class="form-control" id="Nombre" placeholder="⚠️ Ingrese Nombre">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="Apellido" class="form-label Textobohemia">Apellido</label>
+                    <input type="text" class="form-control" id="Apellido" placeholder="⚠️ Ingrese Apellido">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="FechaNacimiento" class="form-label Textobohemia">
+                        Fecha Nacimiento
+                    </label>
+
+                    <input type="date" class="form-control" id="FechaNacimiento">
+                </div>
+
+            </div>
+
+            <!-- Segunda fila -->
+            <div class="row mb-3">
+
+                <div class="col-md-4">
+                    <label for="Dni" class="form-label Textobohemia">DNI</label>
+                    <input type="number" class="form-control" id="Dni" placeholder="⚠️ Ingrese DNI">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="Telefono" class="form-label Textobohemia">Teléfono</label>
+                    <input type="text" class="form-control" id="Telefono" placeholder="⚠️ Ingrese Teléfono">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="Email" class="form-label Textobohemia">Email</label>
+                    <input type="email" class="form-control" id="Email" placeholder="⚠️ Ingrese Email">
+                </div>
+
+            </div>
+
+            <!-- Tercera fila -->
+            <div class="row mb-3">
+
+                <div class="col-md-6">
+                    <label for="CiudadResidencia" class="form-label Textobohemia">
+                        Ciudad Residencia
+                    </label>
+
+                    <input type="text" class="form-control" id="CiudadResidencia" placeholder="⚠️ Ingrese Ciudad">
+                </div>
+
+                <div class="col-md-6">
+
+                    <label class="form-label Textobohemia d-block">
+                        ¿Trabaja?
+                    </label>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="Trabaja">
+
+                        <label class="form-check-label Textobohemia" for="Trabaja">
+                            Sí / No
+                        </label>
+                    </div>
+
+                    <div class="col-md-4 text-center text-md-start">
+                        <button type="submit" class="btn btn-outline-dark w-100 w-md-auto" onclick="GuardarAlumno()">
+
+                            Guardar Alumno
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+       
+
+        </div>
+    </div>
+
+    <!-- Modal Editar -->
+    <div class="modal fade" id="modalEditarAlumno" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title Textobohemia">
+                        Editar Alumno
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <input type="hidden" id="CargaAlumosIdModal" value="0">
+
+                    <div class="Posicion mb-3">
+                        <span class="Textobohemia">Nombre</span>
+
+                        <input type="text" class="form-control" id="NombreModal" placeholder="Ingrese Nombre">
+                    </div>
+
+                    <div class="Posicion mb-3">
+                        <span class="Textobohemia">Apellido</span>
+
+                        <input type="text" class="form-control" id="ApellidoModal" placeholder="Ingrese Apellido">
+                    </div>
+
+                    <div class="Posicion mb-3">
+                        <span class="Textobohemia">Fecha Nacimiento</span>
+
+                        <input type="date" class="form-control" id="FechaNacimientoModal">
+                    </div>
+
+                    <div class="Posicion mb-3">
+                        <span class="Textobohemia">DNI</span>
+
+                        <input type="number" class="form-control" id="DniModal" placeholder="Ingrese DNI">
+                    </div>
+
+                    <div class="Posicion mb-3">
+                        <span class="Textobohemia">Teléfono</span>
+
+                        <input type="text" class="form-control" id="TelefonoModal" placeholder="Ingrese Teléfono">
+                    </div>
+
+                    <div class="Posicion mb-3">
+                        <span class="Textobohemia">Email</span>
+
+                        <input type="email" class="form-control" id="EmailModal" placeholder="Ingrese Email">
+                    </div>
+
+                    <div class="Posicion mb-3">
+                        <span class="Textobohemia">Ciudad Residencia</span>
+
+                        <input type="text" class="form-control" id="CiudadResidenciaModal" placeholder="Ingrese Ciudad">
+                    </div>
+
+                    <div class="Posicion mb-3">
+
+                        <label class="Textobohemia d-block">
+                            ¿Trabaja?
+                        </label>
+
+                        <div class="form-check form-switch">
+
+                            <input class="form-check-input" type="checkbox" id="TrabajaModal">
+
+                            <label class="form-check-label" for="TrabajaModal">
+
+                                Sí / No
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+
+                        Cerrar
+                    </button>
+
+                    <button type="button" class="btn btn-primary" onclick="GuardarAlumno(true)">
+
+                        Guardar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Tabla -->
+    <div class="container mt-3">
+
+        <div class="table-responsive">
+
+            <table class="table table-hover table-sm table-dark">
+
+                <thead>
+
+                    <tr>
+
+                        <th class="Textobohemia">Nombre</th>
+                        <th class="Textobohemia">Apellido</th>
+                        <th class="Textobohemia ocultar-en-768px">
+                            Fecha Nacimiento
+                        </th>
+
+                        <th class="Textobohemia">DNI</th>
+
+                        <th class="Textobohemia ocultar-en-768px">
+                            Teléfono
+                        </th>
+
+                        <th class="Textobohemia ocultar-en-768px">
+                            Email
+                        </th>
+
+                        <th class="Textobohemia ocultar-en-768px">
+                            Ciudad
+                        </th>
+
+                        <th class="Textobohemia">
+                            Trabaja
+                        </th>
+
+                        <th class="Textobohemia"></th>
+                        <th class="Textobohemia"></th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="tbody-alumnos"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+
+</script>
+
+@section Scripts {
+
+    <script src="~/js/CargaAlumnos.js"></script>
+
+}

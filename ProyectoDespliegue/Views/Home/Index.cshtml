@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="home-container">
+
+    <div class="badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 9L12 5 2 9l10 4 10-4z" />
+            <path d="M6 11v5c0 2 6 3 6 3s6-1 6-3v-5" />
+        </svg>
+        Sistema de gestión académica
+    </div>
+
+    <h1 class="hero-title">
+        Bienvenido al <span class="highlight">Sistema de Carga</span><br />
+        de Alumnos
+    </h1>
+
+    <p class="hero-description">
+        Administrá inscripciones, materias y expedientes académicos desde un solo lugar.
+        Rápido, organizado y siempre disponible.
+    </p>
+
+    <div class="cta-row">
+        <a asp-controller="Alumnos" asp-action="Nuevo" class="btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <line x1="19" y1="8" x2="19" y2="14" />
+                <line x1="22" y1="11" x2="16" y2="11" />
+            </svg>
+            Nuevo alumno
+        </a>
+    </div>
+
+</div>

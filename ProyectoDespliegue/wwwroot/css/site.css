@@ -1,0 +1,88 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+.home-container {
+  max-width: 600px;
+  margin: 4rem auto 0;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #e6f1fb;
+  color: #185fa5;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-title .highlight {
+  color: #185fa5;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.cta-row {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+  color: #fff;
+}
